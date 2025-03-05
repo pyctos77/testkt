@@ -42,8 +42,8 @@
               placeholder="cuatro"
               [(ngModel)]="numeros.cuatro"
               />
-
- <app-button-example name="saveNgModel" (saveInfo)="testsave($event)"></app-button-example>
+{{numeros.cuatro}}
+ <app-button-example [name]="savenewbutton" (saveInfo)="testsave($event)"></app-button-example>
 
 
               <h1>Contact formsReactive</h1>

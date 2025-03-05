@@ -9,12 +9,13 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Numeros } from '../../core/models/numeros.model';
+import { ComponentsShareModule } from '../../share/componentsUI/components-share.module';
 
 @Component({
   selector: 'app-form-group',
   standalone: true,
   imports: [
-    ButtonExampleComponent,
+    ComponentsShareModule,
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
@@ -24,6 +25,7 @@ import { Numeros } from '../../core/models/numeros.model';
 })
 export class FormGroupComponent implements OnInit {
 
+  savenewbutton = 'save-----NgModel';
   tiemporeal:number =0;
 
   fb = inject(FormBuilder);

@@ -36,6 +36,9 @@ import { RouterLink } from '@angular/router';
         <li class="nav-item">
           <a class="nav-link" routerLink="/activities">Activities</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts">contacts</a>
+        </li>
       </ul>
     </div>
   </nav>`,
