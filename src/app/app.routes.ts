@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { FormGroupComponent } from './components/form-group/form-group.component';
+import { authGuard } from './core/guards/auth-guard.guard';
 
 export const routes: Routes = [
   {
@@ -19,7 +20,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./components/contacts/contacts.module').then(
         (m) => m.ContactsModule
-      ),
+      )
   },
 
   {
@@ -28,12 +29,20 @@ export const routes: Routes = [
       import('./components/form-group/form-group.component').then(
         (m) => m.FormGroupComponent
       ),
+      // canActivate: [authGuard] 
   },
   {
     path: 'products',
     loadComponent: () =>
       import('./components/productos/pages/prudctos-list/prudctos-list.component').then(
         (m) => m.PrudctosListComponent
+      ),
+  },
+  {
+    path: 'transformhtml',
+    loadComponent: () =>
+      import('./components/transformhtml/transformhtml.component').then(
+        (m) => m.TransformhtmlComponent
       ),
   },
   {

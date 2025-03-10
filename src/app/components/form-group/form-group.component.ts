@@ -10,6 +10,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Numeros } from '../../core/models/numeros.model';
 import { ComponentsShareModule } from '../../share/componentsUI/components-share.module';
+import { ProductsService } from '../productos/services/products.service';
 
 @Component({
   selector: 'app-form-group',
@@ -21,11 +22,11 @@ import { ComponentsShareModule } from '../../share/componentsUI/components-share
     FormsModule,
   ],
   templateUrl: './form-group.component.html',
-  styleUrl: './form-group.component.scss',
+  styleUrl: './form-group.component.scss'
 })
 export class FormGroupComponent implements OnInit {
 
-  savenewbutton = 'save-----NgModel';
+  savenewbutton:string = 'save--NgModel--entrada';
   tiemporeal:number =0;
 
   fb = inject(FormBuilder);
@@ -100,7 +101,7 @@ export class FormGroupComponent implements OnInit {
   }
 
   public testsave(event: any) {
-    if (event === 'save') {
+    if (event === 'save1') {
       console.log('prueba' + event);
 
       console.log('NgModel->' + this.numeros.uno);

@@ -1,0 +1,75 @@
+ <p>transformhtml works!</p>
+<p><b>pipe personalizado</b></p>
+<p>{{ 'Hola, mundoxx!' | ejemploTrans }}</p>
+<br>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Buscar..." />
+<br>
+parametro de salida {{searchTerm}}
+<ul>
+  <li *ngFor="let item of items | filterEjemplo: searchTerm">{{ item }}</li>
+</ul>
+<br> 
+<p><b>pipe ya exixste</b></p>
+<div>
+    Value:
+    {{ numeros | json }}
+</div>
+<p>Total: {{ amount | currency }}</p>
+<p>Totalmx: {{ amount | currency:"MXN" }}</p>
+<br>
+<!-- <p><b>Directivas personalizadas</b></p>
+<div appIluminarColor>
+  Pasa el ratón sobre este texto para ver el cambio de color.
+</div>
+<p><b>Directivas estructurales: agregar y eleminar elementos en el dom</b></p>
+<p *multiplicar="5">
+   hola
+  </p> -->
+
+
+  <!-- <p><b>nueva sintaxis  angular 17 a 19 if  switch for</b></p> 
+
+
+
+  
+  
+  @if (price > 100) {
+    <p>El precio es mayor que 100</p>
+}
+  @if (user$ | async; as us) {
+  <p>{{ us?.name }} / {{ us?.email }}</p>
+}
+
+
+@if (price2 > 100) {
+  <p>El precio es mayor que 100</p>
+} @else {
+  <p>El precio NO es mayor que 100</p>
+}
+
+
+
+@switch (type) {
+  @case ("photo") {
+    <p>photo</p>
+  }
+  @case ("video") {
+    <p>video</p>
+  }
+  @case ("audio") {
+    <p>audio</p>
+  }
+}
+
+
+@if(users$ | async; as users) { 
+  @for (us of users; track us.id) {
+    <li>
+       {{ us.name }} {{us.email}}
+       
+    </li>
+  }@empty{
+    <p>vacio</p>
+    }
+ 
+} -->

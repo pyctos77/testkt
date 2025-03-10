@@ -18,7 +18,7 @@ export class ButtonExampleComponent {
 
   public save(){
 
-     this.saveInfo.emit('save');
+     this.saveInfo.emit('save1');
   }
 
 }

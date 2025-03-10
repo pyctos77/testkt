@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Character } from '../../../core/models/character.model';
 import { catchError, map, Observable, throwError } from 'rxjs';
@@ -11,7 +11,9 @@ export class ProductsService {
 
 
   private character ='character/';
-  constructor(private http: HttpClient) {}
+
+  // private http = inject(HttpClient);
+  constructor(public http: HttpClient) {}
 
   
    headers = new HttpHeaders({
