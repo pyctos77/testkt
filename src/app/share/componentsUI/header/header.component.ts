@@ -42,6 +42,10 @@ import { RouterLink } from '@angular/router';
         <li class="nav-item">
           <a class="nav-link" routerLink="/transformhtml">transformhtml</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lifecyle">life cyle</a>
+        </li>
+        
       </ul>
     </div>
   </nav>`,

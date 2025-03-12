@@ -1,1 +1,9 @@
 <p>home works!</p>
+
+<input type="text" class="form-control" placeholder="tiempo real" [(ngModel)]="tiempoRealName" />
+<p><b>onchanges</b>{{tiempoRealName}}</p>
+<app-life-cycle [name]="tiempoRealName">
+    
+</app-life-cycle>
+
+<span #new>new home</span>

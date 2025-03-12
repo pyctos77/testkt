@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { LifeCycleComponent } from '../life-cycle/life-cycle.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [LifeCycleComponent, CommonModule, ReactiveFormsModule, FormsModule
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit{
 
+  tiempoRealName:string ='dsds';
+
+  
+  @ViewChild('new') valorSpan!: ElementRef;
+
+
+  ngAfterViewInit() {
+    // console.log('home------------...................>');
+    // console.log('span element ngAfterViewInit');
+    // console.log(this.valorSpan?.nativeElement?.textContent);
+  }
 }

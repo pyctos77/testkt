@@ -9,6 +9,8 @@ import { CommonModule, CurrencyPipe, JsonPipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterEjemploPipe } from '../../share/pipes/filter-ejemplo.pipe';
 import { EjemploTransformPipe } from '../../share/pipes/ejemploTransform.pipe';
+import { MultiplicarDirective } from '../../share/directives/multiplicar.directive';
+import { IluminarColorDirective } from '../../share/directives/iluminar-color.directive';
 
 @Component({
   selector: 'app-transformhtml',
@@ -17,7 +19,8 @@ import { EjemploTransformPipe } from '../../share/pipes/ejemploTransform.pipe';
     ReactiveFormsModule,
     FormsModule,
     EjemploTransformPipe,
-    
+    MultiplicarDirective,
+    IluminarColorDirective,
     FilterEjemploPipe,
     JsonPipe,
     CurrencyPipe,

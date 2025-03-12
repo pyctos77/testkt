@@ -17,22 +17,25 @@ parametro de salida {{searchTerm}}
 <p>Total: {{ amount | currency }}</p>
 <p>Totalmx: {{ amount | currency:"MXN" }}</p>
 <br>
-<!-- <p><b>Directivas personalizadas</b></p>
+<p><b>Directivas personalizadas</b></p>
 <div appIluminarColor>
   Pasa el ratón sobre este texto para ver el cambio de color.
 </div>
 <p><b>Directivas estructurales: agregar y eleminar elementos en el dom</b></p>
-<p *multiplicar="5">
+<p *multiplicar="3">
    hola
-  </p> -->
+  </p>
 
 
-  <!-- <p><b>nueva sintaxis  angular 17 a 19 if  switch for</b></p> 
+  <p><b>nueva sintaxis  angular 17 a 19 if  switch for</b></p> 
 
 
 
-  
-  
+  <!-- <ng-container *ngIf="price > 100"></ng-container>
+
+  <table><tr *ngif="price > 100">
+
+  </tr></table> -->
   @if (price > 100) {
     <p>El precio es mayor que 100</p>
 }
@@ -72,4 +75,4 @@ parametro de salida {{searchTerm}}
     <p>vacio</p>
     }
  
-} -->
+}
