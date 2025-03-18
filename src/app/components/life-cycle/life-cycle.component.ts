@@ -10,10 +10,12 @@ import { Component, Input ,
   OnInit,
   SimpleChanges,
   ViewChild,
-  ElementRef, 
+  ElementRef,
+  ContentChild, 
 } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { HijoComponent } from '../../share/componentsUI/app-hijo/app-hijo.component';
 
 @Component({
   selector: 'app-life-cycle',
@@ -35,42 +37,45 @@ OnDestroy
 
   
   @ViewChild('newVal') valorSpan!: ElementRef;
-
+  @ContentChild('contenidoPadre') content!: ElementRef;
+  @ContentChild(HijoComponent) hijoContent!:HijoComponent;
   
   constructor() {
     console.log(`constructor`);
   }
   ngOnChanges(s : SimpleChanges) {
-    console.log(`ngOnChanges - count is`);
-    console.log(s);
+    // console.log(`ngOnChanges - count is`);
+    // console.log(s);
   }
   ngOnInit() {
     // console.log(`ngOnInit  - count is ${this.count}`);
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
 
-    console.log('span element ngOnInit');
-    console.log(this.valorSpan?.nativeElement?.textContent);
+    // console.log('span element ngOnInit');
+    // console.log(this.valorSpan?.nativeElement?.textContent);
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck parent');
+    // console.log('ngDoCheck parent');
   }
   ngAfterContentInit() {
-    // console.log('ngAfterContentInit');
+    console.log('ngAfterContentInit');
+    console.log(this.content.nativeElement.textContent);
+    console.log(this.hijoContent.description);
   }
   ngAfterContentChecked() {
-    // console.log('ngAfterContentChecked');
+    console.log('ngAfterContentChecked');
   }
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
-    console.log('span element ngAfterViewInit');
-    console.log(this.valorSpan?.nativeElement?.textContent);
+    // console.log('ngAfterViewInit');
+    // console.log('span element ngAfterViewInit');
+    // console.log(this.valorSpan?.nativeElement?.textContent);
   }
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked');
   }
   ngOnDestroy() {
-    // console.log('ngOnDestroy');
+    console.log('ngOnDestroy');
   }
 
 

@@ -1,17 +1,29 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Character } from '../../../../core/models/character.model';
+import { filter, Observable, Subscription, take, tap } from 'rxjs';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-prudctos-list',
-  imports: [],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule
+  ],
   templateUrl: './prudctos-list.component.html',
   styleUrl: './prudctos-list.component.scss'
 })
-export class PrudctosListComponent {
+export class PrudctosListComponent implements OnDestroy {
 
   public characters!: Character[];
-  
+  characters$: Observable<Character[]> | undefined;
+ 
+  private subscription!: Subscription;
+
   private productService = inject(ProductsService);
 
   // constructor(public productService1 : ProductsService){
@@ -22,10 +34,33 @@ export class PrudctosListComponent {
 
     console.log('success');
     
-    this.productService.getAll().subscribe( res => {
-      this.characters = res;
+    // this.characters$ = this.productService.getAll();
 
-      console.log( this.characters);
+   this.subscription = this.productService.getAll().pipe(
+    // take(1),
+    
+    filter( (tags:Character[]) => {
+      
+      return tags[1].id === 1}),
+    tap((x: Character[]) =>{
+     
+      console.log('tap');  
+      console.log(x);
+    }),
+    
+    ).subscribe( res => {
+      console.log('res');
+      console.log(res);
+      // this.characters = res;
+
+      // console.log( this.characters);
     });
+  }
+
+
+  ngOnDestroy (){
+
+    console.log('salida');
+    this.subscription.unsubscribe();
   }
 }

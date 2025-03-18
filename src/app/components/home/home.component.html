@@ -3,7 +3,8 @@
 <input type="text" class="form-control" placeholder="tiempo real" [(ngModel)]="tiempoRealName" />
 <p><b>onchanges</b>{{tiempoRealName}}</p>
 <app-life-cycle [name]="tiempoRealName">
-    
+    <p #contenidoPadre>Este es un párrafo proyectado desde el padre >>>>>>></p>
+    <app-hijo></app-hijo>
 </app-life-cycle>
 
 <span #new>new home</span>
